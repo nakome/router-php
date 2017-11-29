@@ -29,8 +29,11 @@ class Router
 {
     private $routes = array();
 
-    public static $config = array();
-
+    public static function site_url()
+    {
+        $https = (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') ? 'https://' : 'http://';
+        return $https . rtrim(rtrim($_SERVER['HTTP_HOST'], '\\/') . dirname($_SERVER['PHP_SELF']), '\\/');
+    }
     /**
     *  Render Assets.
     *
