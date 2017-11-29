@@ -14,7 +14,7 @@ if (DEV) {
 }
 
 // include Router
-include '../Router.php';
+include '../router.php';
 
 // router var
 $router = new Router();
